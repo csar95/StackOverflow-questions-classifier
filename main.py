@@ -67,7 +67,7 @@ vectorize_layer.adapt(train_text)  # This will analyze the dataset, determine th
 
 # print(vectorize_layer.get_vocabulary())  # Look up the relationship between tokens (strings) and integers
 
-# APPLAY THE TextVectorization LAYER TO EACH DATASET
+# APPLY THE TextVectorization LAYER TO EACH DATASET
 train_ds = raw_train_ds.map(vectorize_text)
 val_ds = raw_validation_ds.map(vectorize_text)
 test_ds = raw_test_ds.map(vectorize_text)
@@ -129,6 +129,8 @@ model.compile(
     loss=SparseCategoricalCrossentropy(from_logits=True),  # If this was a binary classification problem --> Use BinaryCrossentropy
     optimizer='adam',
     metrics=['accuracy'])
+
+print(model.summary())
 
 ###################### 5. TRAIN AND EVALUATE THE MODEL ######################
 
