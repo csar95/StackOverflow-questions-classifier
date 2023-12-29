@@ -30,8 +30,8 @@ raw_train_ds = tf.keras.preprocessing.text_dataset_from_directory(
     seed=seed)  # Optional random seed for shuffling and transformations. Thus, we can reproduce the results when using
                 # random generators. That is, using the same seed two times, results in the same random number.
 
-# print(type(raw_train_ds))  # BatchDataset
-# print(type(raw_train_ds.take(1)))  # TakeDataset
+# print(type(raw_train_ds))  # BatchDataset: Dataset of batches/groups (32 elements by default in the function above)
+# print(type(raw_train_ds.take(1)))  # TakeDataset: Returns n (1 in this case) batches from the BatchDataset
 
 # GET VALIDATION DATA
 raw_validation_ds = tf.keras.preprocessing.text_dataset_from_directory(
